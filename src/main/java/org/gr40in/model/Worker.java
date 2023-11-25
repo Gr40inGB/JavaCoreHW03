@@ -29,7 +29,7 @@ public class Worker extends Employer {
 
     @Override
     public String toString() {
-        return super.toString() + " - Worker(" + fixedPeeForMonth + ")";
+        return super.toString() + " - Worker(" + getMonthlySalary()  + ")";
     }
 
 

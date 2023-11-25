@@ -22,7 +22,7 @@ public class Freelancer extends Employer {
 
     @Override
     public String toString() {
-        return super.toString() + " - Freelancer(" + hourlyRate + ")";
+        return super.toString() + " - Freelancer(" + getMonthlySalary()  + ")";
     }
 }
 
