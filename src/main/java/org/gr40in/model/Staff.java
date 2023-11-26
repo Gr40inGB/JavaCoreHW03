@@ -4,11 +4,8 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class Staff implements Iterable<Employer>{
+public class Staff implements Iterable<Employer> {
     private List<Employer> staffList;
-
-    public Staff() {
-    }
 
     public Staff(List<Employer> staffList) {
         this.staffList = staffList;
@@ -29,6 +26,20 @@ public class Staff implements Iterable<Employer>{
 
     @Override
     public Iterator<Employer> iterator() {
-        return null;
+        return new employerIterator();
+    }
+
+    public class employerIterator implements Iterator<Employer> {
+        int current;
+
+        @Override
+        public boolean hasNext() {
+            return current != staffList.size();
+        }
+
+        @Override
+        public Employer next() {
+            return staffList.get(current++);
+        }
     }
 }

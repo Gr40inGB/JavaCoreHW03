@@ -62,7 +62,7 @@ public abstract class Employer implements Comparable<Employer> {
 
     @Override
     public String toString() {
-        return  name + " " + birthDate.format(formatter);
+        return  name + " \t" + birthDate.format(formatter);
     }
 
     //endregion
