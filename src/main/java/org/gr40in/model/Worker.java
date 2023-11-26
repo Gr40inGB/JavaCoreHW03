@@ -18,18 +18,19 @@ public class Worker extends Employer {
     public Worker(String name, LocalDate birthDate) {
         super(name, birthDate);
         if (this.fixedPeeForMonth == null) this.fixedPeeForMonth = EmployerService.getMinFixedPeeForMonth();
+
     }
 
     public Worker(String name, LocalDate birthDate, BigDecimal fixedPeeForMonth) {
         this(name, birthDate);
-        this.fixedPeeForMonth = fixedPeeForMonth;
+        this.fixedPeeForMonth = fixedPeeForMonth == null ? EmployerService.getMinFixedPeeForMonth() : fixedPeeForMonth;
     }
 
     //endregion
 
     @Override
     public String toString() {
-        return super.toString() + " - Worker(" + getMonthlySalary()  + ")";
+        return super.toString() + " - Worker(" + getMonthlySalary() + ")";
     }
 
 
